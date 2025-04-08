@@ -8,11 +8,11 @@ from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, Lea
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
-        'users': 'http://127.0.0.1:8000/api/users/',
-        'teams': 'http://127.0.0.1:8000/api/teams/',
-        'activities': 'http://127.0.0.1:8000/api/activities/',
-        'leaderboard': 'http://127.0.0.1:8000/api/leaderboard/',
-        'workouts': 'http://127.0.0.1:8000/api/workouts/'
+        'users': 'api/users/',
+        'teams': 'api/teams/',
+        'activities': 'api/activities/',
+        'leaderboard': 'api/leaderboard/',
+        'workouts': 'api/workouts/'
     })
 
 class UserViewSet(viewsets.ModelViewSet):

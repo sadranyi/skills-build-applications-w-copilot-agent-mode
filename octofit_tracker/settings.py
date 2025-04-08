@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-^lh@m!xnrjnn5#azfy_5(v1v#2(cw^n_phy$b)2jk=+ey1(y=="
+SECRET_KEY = "django-insecure-g$tr)blvla!z4!5mgl-@x!bna@_0#i*q3+_)nm_1e6_grocfb6"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -37,14 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "corsheaders",
-    "octofit_tracker",
-    "rest_framework",
-    "djongo",
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -54,7 +49,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "octofit_app.urls"
+ROOT_URLCONF = "octofit_tracker.urls"
 
 TEMPLATES = [
     {
@@ -72,7 +67,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "octofit_app.wsgi.application"
+WSGI_APPLICATION = "octofit_tracker.wsgi.application"
 
 
 # Database
@@ -80,10 +75,8 @@ WSGI_APPLICATION = "octofit_app.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "djongo",
-        "NAME": "octofit_db",
-        "HOST": "localhost",
-        "PORT": 27017,
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
@@ -128,8 +121,3 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-# Add CORS configuration
-CORS_ALLOW_ALL_ORIGINS = True
-
-
