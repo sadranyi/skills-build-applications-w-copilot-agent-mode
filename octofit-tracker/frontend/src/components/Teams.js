@@ -4,7 +4,7 @@ const Teams = () => {
   const [teams, setTeams] = useState([]);
 
   useEffect(() => {
-    fetch('https://friendly-orbit-67jj6x7rqf5ww7-8000.app.github.dev/api/teams')
+    fetch('https://friendly-orbit-67jj6x7rqf5ww7-8000.app.github.dev/api/teams/')
       .then(response => response.json())
       .then(data => setTeams(data))
       .catch(error => console.error('Error fetching teams:', error));

@@ -4,7 +4,7 @@ const Workouts = () => {
   const [workouts, setWorkouts] = useState([]);
 
   useEffect(() => {
-    fetch('https://friendly-orbit-67jj6x7rqf5ww7-8000.app.github.dev/api/workouts')
+    fetch('https://friendly-orbit-67jj6x7rqf5ww7-8000.app.github.dev/api/workouts/')
       .then(response => response.json())
       .then(data => setWorkouts(data))
       .catch(error => console.error('Error fetching workouts:', error));
